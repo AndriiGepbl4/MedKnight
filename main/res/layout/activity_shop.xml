@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andrii.plariummedievalknight.ShopWindow">
+
+    <TextView
+        android:id="@+id/tvTrader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="15dp"
+        android:text="Trader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="103dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="16dp"
+        android:text="Inventory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/flBuyItemChars"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Money"
+        app:layout_constraintStart_toStartOf="@+id/tvInventory"
+        app:layout_constraintTop_toBottomOf="@+id/tvInventory" />
+
+    <FrameLayout
+        android:id="@+id/flInvHero"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/flSellItemChars"
+        tools:background="@android:color/holo_green_light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ivHeroShopInv05"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="229dp"
+                tools:layout_editor_absoluteY="107dp" />
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivHeroShopInv01"
+                android:layout_toEndOf="@+id/ivHeroShopInv01"
+                android:layout_toRightOf="@+id/ivHeroShopInv01"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="279dp"
+                tools:layout_editor_absoluteY="107dp" />
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivHeroShopInv02"
+                android:layout_toEndOf="@+id/ivHeroShopInv02"
+                android:layout_toRightOf="@+id/ivHeroShopInv02"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="357dp"
+                tools:layout_editor_absoluteY="107dp" />
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivHeroShopInv03"
+                android:layout_toEndOf="@+id/ivHeroShopInv03"
+                android:layout_toRightOf="@+id/ivHeroShopInv03"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="407dp"
+                tools:layout_editor_absoluteY="107dp" />
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="229dp"
+                tools:layout_editor_absoluteY="167dp" />
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/ivHeroShopInv05"
+                android:layout_toRightOf="@+id/ivHeroShopInv05"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="358dp"
+                tools:layout_editor_absoluteY="167dp" />
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/ivHeroShopInv06"
+                android:layout_toRightOf="@+id/ivHeroShopInv06"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="409dp"
+                tools:layout_editor_absoluteY="167dp" />
+
+            <ImageView
+                android:id="@+id/ivHeroShopInv08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/ivHeroShopInv07"
+                android:layout_toRightOf="@+id/ivHeroShopInv07"
+                app:srcCompat="@mipmap/inv_empty_slot"
+                tools:layout_editor_absoluteX="463dp"
+                tools:layout_editor_absoluteY="167dp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flBuyItemChars"
+        android:layout_width="0dp"
+        android:layout_height="151dp"
+        android:layout_marginEnd="13dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/flInvTrader"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@android:color/holo_green_light">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvItemName"
+            app:layout_constraintStart_toEndOf="@+id/tvItemName"
+            tools:background="@android:color/holo_orange_light">
+
+            <TextView
+                android:id="@+id/tvItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Item's Name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnBuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:text="BUY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnHide"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnHide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="170dp"
+                android:background="@android:drawable/btn_dialog"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flInvTrader"
+        android:layout_width="0dp"
+        android:layout_height="113dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/flSellItemChars"
+        app:layout_constraintEnd_toStartOf="@+id/flBuyItemChars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInventory">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:background="@android:color/holo_green_light">
+
+            <ImageView
+                android:id="@+id/ivTraderInv01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/ivTraderInv02"
+                app:srcCompat="@mipmap/inv_apple"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="108dp" />
+
+            <ImageView
+                android:id="@+id/ivTraderInv02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivTraderInv03"
+                android:layout_toEndOf="@+id/ivTraderInv01"
+                android:layout_toRightOf="@+id/ivTraderInv01"
+                app:srcCompat="@mipmap/inv_hardarm"
+                tools:layout_editor_absoluteX="82dp"
+                tools:layout_editor_absoluteY="108dp" />
+
+            <ImageView
+                android:id="@+id/ivTraderInv03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/ivTraderInv04"
+                android:layout_toEndOf="@+id/ivTraderInv06"
+                android:layout_toRightOf="@+id/ivTraderInv06"
+                app:srcCompat="@mipmap/inv_leather"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="108dp" />
+
+            <ImageView
+                android:id="@+id/ivTraderInv04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ivTraderInv07"
+                android:layout_toEndOf="@+id/ivTraderInv07"
+                android:layout_toRightOf="@+id/ivTraderInv07"
+                app:srcCompat="@mipmap/inv_chainarm"
+                tools:layout_editor_absoluteX="223dp"
+                tools:layout_editor_absoluteY="108dp" />
+
+            <ImageView
+                android:id="@+id/ivTraderInv05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@mipmap/inv_knife"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="168dp" />
+
+            <ImageView
+                android:id="@+id/ivTraderInv06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/ivTraderInv05"
+                android:layout_toRightOf="@+id/ivTraderInv05"
+                app:srcCompat="@mipmap/inv_axe"
+                tools:layout_editor_absoluteX="82dp"
+                tools:layout_editor_absoluteY="168dp" />
+
+            <ImageView
+                android:id="@+id/ivTraderInv07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/ivTraderInv06"
+                android:layout_toRightOf="@+id/ivTraderInv06"
+                app:srcCompat="@mipmap/inv_mace"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="168dp" />
+
+            <ImageView
+                android:id="@+id/ivTraderInv08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/ivTraderInv07"
+                android:layout_toRightOf="@+id/ivTraderInv07"
+                app:srcCompat="@mipmap/inv_sword"
+                tools:layout_editor_absoluteX="223dp"
+                tools:layout_editor_absoluteY="168dp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flSellItemChars"
+        android:layout_width="0dp"
+        android:layout_height="168dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/flInvHero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvSellItemChars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                android:text="TextView" />
+
+            <Button
+                android:id="@+id/btnSell"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tvSellItemChars"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/tvSellItemChars"
+                android:layout_marginBottom="16dp"
+                android:text="Sell" />
+
+            <Button
+                android:id="@+id/btnHideSellWindow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tvSellItemChars"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@android:drawable/btn_dialog" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlShopNavBtn"
+        android:layout_width="505dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnShopMainWnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="Main WIndow" />
+
+        <Button
+            android:id="@+id/btnShopShopWnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btnShopMainWnd"
+            android:layout_centerHorizontal="true"
+            android:text="Shop" />
+
+        <Button
+            android:id="@+id/btnShopInvWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Inventory" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
