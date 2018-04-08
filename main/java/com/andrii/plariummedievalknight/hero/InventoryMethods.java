@@ -2,37 +2,35 @@ package com.andrii.plariummedievalknight.hero;
 
 import android.widget.ImageView;
 
-import com.andrii.plariummedievalknight.items.Item;
 import com.andrii.plariummedievalknight.items.ItemList;
 import com.andrii.plariummedievalknight.items.ItemsMethods;
 
 /**
- * Created by Andrii on 07-Apr-18.
+ * Class contains methods for working with inventory
  */
 
 public class InventoryMethods {
 
-    HeroInventory heroInventory = new HeroInventory();
-    HeroSkills heroSkills = HeroSkills.getHeroSkills();
-    ItemsMethods itemsMethods = new ItemsMethods();
-    ItemList itemList = new ItemList();
+    private HeroInventory heroInventory = new HeroInventory();
+    private HeroSkills heroSkills = HeroSkills.getHeroSkills();
+    private ItemsMethods itemsMethods = new ItemsMethods();
+    private ItemList itemList = new ItemList();
 
-    public void addItem(String item){
-        //adds an item to inventory
+    public void addItem(String item){ // adds an item to inventory's first empty cell
         for (int i = 0; i <  heroInventory.getInventory().length; i++){
             if (heroInventory.getInventory()[i].equals("None")){
-                heroInventory.getInventory()[i] = item;
+                heroInventory.setInventory(i, item);
                 break;
             }
         }
     }
 
     public void addItemByIndex(String item, int index){
-        heroInventory.getInventory()[index] = item;
+        heroInventory.setInventory(index, item);
     }
 
     public void removeItem(int index){
-        heroInventory.getInventory()[index] = "None";
+        heroInventory.setInventory(index, "None");
     }
 
     public void removeWeapon(){
@@ -47,7 +45,7 @@ public class InventoryMethods {
         heroInventory.setArmor("None");
     }
 
-    public boolean isFreeSpace(){
+    public boolean isFreeSpace(){ // check if inventory contains an empty slot
         boolean freeSlot = false;
         for (int i = 0; i < heroInventory.getInventory().length; i++){
             if (heroInventory.getInventory()[i].equals("None")){
@@ -58,7 +56,7 @@ public class InventoryMethods {
         return freeSlot;
     }
 
-    public void setInventoryImages(String[] stringInvArr, ImageView[] imageInvArr){
+    public void setInventoryImages(String[] stringInvArr, ImageView[] imageInvArr){ // takes inventory array then sets images to inventory's slots
         for (int i =0; i < imageInvArr.length; i++){
             itemsMethods.setItemToImage(stringInvArr[i], imageInvArr[i]);
         }
@@ -86,7 +84,5 @@ public class InventoryMethods {
 
             heroSkills.setAddDefence(itemList.items.get(itemFromInventrory).getDefence());
         }
-
     }
-
 }

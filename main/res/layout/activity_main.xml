@@ -26,7 +26,6 @@
         android:text="Attack"
         app:layout_constraintBottom_toBottomOf="@+id/tvDefence"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/relativeLayout"
         app:layout_constraintStart_toStartOf="@+id/tvName"
         app:layout_constraintTop_toTopOf="@+id/tvName" />
 

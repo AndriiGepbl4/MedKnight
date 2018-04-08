@@ -1,6 +1,5 @@
 package com.andrii.plariummedievalknight;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,13 +33,14 @@ public class ShopWindow extends AppCompatActivity {
     private FrameLayout flSellItemChars;
     private FrameLayout flInvTrader;
 
-    private ImageView[] ivTraderInvArray = new ImageView[8];
-    private ImageView[] ivHeroInvArray = new ImageView[8];
+    private ImageView[] ivTraderInvArray = new ImageView[8]; // array of trader inventory images
+    private ImageView[] ivHeroInvArray = new ImageView[8]; // array of hero inventory images
 
     private ItemsMethods itemsMethods;
     private ItemList itemList;
     private HeroInventory heroInventory;
     private InventoryMethods inventoryMethods;
+
     private String[] traderInv = {"Sword", "Apple", "Chain arm", "Leather arm", "Hard arm", "Knife", "Axe", "Mace"};
 
     @Override
@@ -54,7 +54,7 @@ public class ShopWindow extends AppCompatActivity {
         setButtons();
     }
 
-    private void init(){
+    private void init(){ // views initialisation
         itemsMethods = new ItemsMethods();
         itemList = new ItemList();
         heroInventory = new HeroInventory();
@@ -96,9 +96,9 @@ public class ShopWindow extends AppCompatActivity {
         ivHeroInvArray[7] = (ImageView) findViewById(R.id.ivHeroShopInv08);
     }
 
-    private void setInventoryImages(){
+    private void setInventoryImages(){ // sets images to hero and trader inventories
         inventoryMethods.setInventoryImages(traderInv, ivTraderInvArray);
-        inventoryMethods.setInventoryImages(HeroInventory.getInventory(), ivHeroInvArray);
+        inventoryMethods.setInventoryImages(heroInventory.getInventory(), ivHeroInvArray);
     }
 
     private void setMoney(){
@@ -106,6 +106,10 @@ public class ShopWindow extends AppCompatActivity {
     }
 
     private void buyWindow(final String item){
+          /*
+        method shows window with item's characteristics
+        and buy button that depends on chosen item
+         */
         wndItemChars.setVisibility(View.VISIBLE);
         flInvHero.setVisibility(View.INVISIBLE);
 
@@ -120,6 +124,11 @@ public class ShopWindow extends AppCompatActivity {
     }
 
     private void buyBtnClick(String item){
+        /*
+        method checks money balance, inventory capacity.
+        If the result is positive - it subtracts item's price
+        and add an item to inventory
+         */
         if (itemList.items.get(item).getPrice() > heroInventory.getMoney()){
             tvItemName.setText("You don't have enought money to buy " + "\n" + itemList.items.get(item).getName());
         } else if (!(inventoryMethods.isFreeSpace())){
@@ -134,12 +143,16 @@ public class ShopWindow extends AppCompatActivity {
     }
 
     private void sellWindow(final int index){
+           /*
+        method shows window with item's characteristics
+        and buy button that depends on chosen item
+         */
         String item = heroInventory.getInventory()[index];
         if(!("None").equals(item)) {
             flSellItemChars.setVisibility(View.VISIBLE);
             flInvTrader.setVisibility(View.INVISIBLE);
-
             tvSellItemChars.setText(itemsMethods.getItemCharacteristic(item));
+
             btnSell.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -150,6 +163,10 @@ public class ShopWindow extends AppCompatActivity {
     }
 
     private void sellBtnClick(int index){
+        /*
+        sells chosen item, adds money,
+        removes item from inventory
+         */
         String item = heroInventory.getInventory()[index];
         heroInventory.setMoney(heroInventory.getMoney() + itemList.items.get(item).getPrice());
         setMoney();
@@ -158,17 +175,17 @@ public class ShopWindow extends AppCompatActivity {
         hideSellWindow();
     }
 
-    private void hideWndItemChars(){
+    private void hideWndItemChars(){ // hides window with item's characteristics
         wndItemChars.setVisibility(View.INVISIBLE);
         flInvHero.setVisibility(View.VISIBLE);
     }
 
-    private void hideSellWindow(){
+    private void hideSellWindow(){ // hides cell window
         flSellItemChars.setVisibility(View.INVISIBLE);
         flInvTrader.setVisibility(View.VISIBLE);
     }
 
-    private void setButtons(){
+    private void setButtons(){ // sets methods and click listeners to buttons
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,7 +196,6 @@ public class ShopWindow extends AppCompatActivity {
                     case R.id.btnShopInvWindow:
                         startActivity(new Intent(ShopWindow.this, InventoryWindow.class));
                         break;
-
                     case R.id.ivTraderInv01:
                         buyWindow(traderInv[0]);
                         break;
@@ -204,7 +220,6 @@ public class ShopWindow extends AppCompatActivity {
                     case R.id.ivTraderInv08:
                         buyWindow(traderInv[7]);
                         break;
-
                     case R.id.ivHeroShopInv01:
                         sellWindow(0);
                         break;
@@ -244,11 +259,11 @@ public class ShopWindow extends AppCompatActivity {
         btnHide.setOnClickListener(onClickListener);
         btnHideSellWindow.setOnClickListener(onClickListener);
 
-        for (int i = 0; i < ivTraderInvArray.length; i++) {
+        for (int i = 0; i < ivTraderInvArray.length; i++) { // sets click listeners to trader's inventory
             ivTraderInvArray[i].setOnClickListener(onClickListener);
         }
 
-        for (int i = 0; i < ivHeroInvArray.length; i++){
+        for (int i = 0; i < ivHeroInvArray.length; i++){ // sets click listeners to hero's inventory
             ivHeroInvArray[i].setOnClickListener(onClickListener);
         }
     }

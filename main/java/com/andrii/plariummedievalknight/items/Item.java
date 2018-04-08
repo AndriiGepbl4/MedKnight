@@ -1,9 +1,5 @@
 package com.andrii.plariummedievalknight.items;
 
-/**
- * Created by Andrii on 05-Apr-18.
- */
-
 public class Item {
 
     private String name;
