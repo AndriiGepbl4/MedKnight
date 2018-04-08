@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.andrii.plariummedievalknight.hero.HeroInventory;
-import com.andrii.plariummedievalknight.hero.HeroSkills;
 import com.andrii.plariummedievalknight.hero.InventoryMethods;
 import com.andrii.plariummedievalknight.items.ItemList;
 import com.andrii.plariummedievalknight.items.ItemsMethods;
@@ -35,9 +34,9 @@ public class InventoryWindow extends AppCompatActivity {
     private ImageView ivArmor;
     private ImageView ivWeapon;
 
-    private ImageView[] ivHeroInvArray = new ImageView[8];
-    private ItemsMethods itemsMethods = new ItemsMethods();
+    private ImageView[] ivHeroInvArray = new ImageView[8]; // array of inventory cells' images
 
+    private ItemsMethods itemsMethods = new ItemsMethods();
     private HeroInventory heroInventory;
     private InventoryMethods inventoryMethods;
     private ItemList itemList;
@@ -52,7 +51,7 @@ public class InventoryWindow extends AppCompatActivity {
         setButtons();
     }
 
-    private void init() {
+    private void init(){ // views initialisation
         heroInventory = new HeroInventory();
         inventoryMethods = new InventoryMethods();
         itemList = new ItemList();
@@ -85,6 +84,11 @@ public class InventoryWindow extends AppCompatActivity {
     }
 
     private void setViews(){
+        /*
+        method sets balance, hero images,
+        buttons for removing weapon/armor
+        and inventory images
+         */
         tvMoney.setText("Money " + heroInventory.getMoney());
         itemsMethods.wearOnHero(ivArmor, ivWeapon);
 
@@ -98,6 +102,11 @@ public class InventoryWindow extends AppCompatActivity {
     }
 
     private void showItemChars(final int index){
+        /*
+        method shows window with item's characteristics
+        and buttons(take/wear/use and drop) that depend on
+        chosen item
+         */
         String item = heroInventory.getInventory()[index];
         if(!("None").equals(item)) {
             rlItemChars.setVisibility(View.VISIBLE);
@@ -126,12 +135,12 @@ public class InventoryWindow extends AppCompatActivity {
         }
     }
 
-    private void hideItemChars(){
+    private void hideItemChars(){ // hide window with item's characteristics
         rlItemChars.setVisibility(View.INVISIBLE);
         rlHeroLayout.setVisibility(View.VISIBLE);
     }
 
-    private void setButtons(){
+    private void setButtons(){ // sets methods and click listeners to buttons
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,10 +151,9 @@ public class InventoryWindow extends AppCompatActivity {
                     case R.id.btnMainTrader:
                         startActivity(new Intent(InventoryWindow.this, ShopWindow.class));
                         break;
-
                     case R.id.ivHeroInv01:
                         showItemChars(0);
-                                break;
+                        break;
                     case R.id.ivHeroInv02:
                         showItemChars(1);
                         break;
@@ -167,7 +175,6 @@ public class InventoryWindow extends AppCompatActivity {
                     case R.id.ivHeroInv08:
                         showItemChars(7);
                         break;
-
                     case R.id.btnHide:
                         hideItemChars();
                         break;
@@ -189,7 +196,7 @@ public class InventoryWindow extends AppCompatActivity {
         btnRemoveWpn.setOnClickListener(onClickListener);
         btnRemoveArmr.setOnClickListener(onClickListener);
 
-        for (int i = 0; i < ivHeroInvArray.length; i++){
+        for (int i = 0; i < ivHeroInvArray.length; i++){ // cycle to set click listener to all cells of inventory
             ivHeroInvArray[i].setOnClickListener(onClickListener);
         }
     }

@@ -1,6 +1,5 @@
 package com.andrii.plariummedievalknight;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ public class MainWindow extends AppCompatActivity {
     private TextView tvAttack;
     private TextView tvDefence;
 
-
     private Button btnMainWind;
     private Button btnTrader;
     private Button btnInventory;
@@ -38,7 +36,7 @@ public class MainWindow extends AppCompatActivity {
         setButtons();
     }
 
-    private void init(){
+    private void init(){ // views initialisation
         ivMainArmor = (ImageView)findViewById(R.id.ivMainArmor);
         ivMainWeapon = (ImageView)findViewById(R.id.ivMainWeapon);
 
@@ -50,13 +48,14 @@ public class MainWindow extends AppCompatActivity {
         btnInventory = (Button)findViewById(R.id.btnMainInventory);
     }
 
-    private void setViews(){
+    private void setViews(){ // sets hero images and text views
         itemsMethods.wearOnHero(ivMainArmor, ivMainWeapon);
         String addedAttack = "";
         String addedDefence = "";
 
         if(heroSkills.getAddAttack() > 0){
             addedAttack = " (" + heroSkills.getHeroAttack() + " + " + heroSkills.getAddAttack() + ")";}
+
         if(heroSkills.getAddDefence() > 0){
             addedDefence =  " (" + heroSkills.getHeroDefence() + " + " + heroSkills.getAddDefence() + ")";}
 
@@ -64,7 +63,7 @@ public class MainWindow extends AppCompatActivity {
         tvDefence.setText("Defence " + (heroSkills.getHeroDefence() + heroSkills.getAddDefence()) + addedDefence);
     }
 
-    private void setButtons(){
+    private void setButtons(){ // sets methods and click listeners to buttons
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
