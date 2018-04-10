@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andrii.plariummedievalknight.InventoryWindow"
+    tools:layout_editor_absoluteY="73dp">
+
+    <TextView
+        android:id="@+id/tvInventory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Inventory"
+        app:layout_constraintStart_toStartOf="@+id/ivHeroInv01"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Money"
+        app:layout_constraintStart_toStartOf="@+id/tvInventory"
+        app:layout_constraintTop_toBottomOf="@+id/tvInventory" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivHeroInv02"
+        app:layout_constraintTop_toTopOf="@+id/ivHeroInv02"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_toEndOf="@+id/ivHeroInv01"
+        android:layout_toRightOf="@+id/ivHeroInv01"
+        app:layout_constraintEnd_toStartOf="@+id/ivHeroInv03"
+        app:layout_constraintTop_toTopOf="@+id/ivHeroInv03"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivHeroInv04"
+        app:layout_constraintTop_toTopOf="@+id/ivHeroInv04"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="94dp"
+        android:layout_toEndOf="@+id/ivHeroInv03"
+        android:layout_toRightOf="@+id/ivHeroInv03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ivHeroInv01"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="@+id/ivHeroInv01"
+        app:layout_constraintTop_toBottomOf="@+id/ivHeroInv01"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivHeroInv01"
+        android:layout_toEndOf="@+id/ivHeroInv01"
+        android:layout_toRightOf="@+id/ivHeroInv01"
+        app:layout_constraintStart_toStartOf="@+id/ivHeroInv02"
+        app:layout_constraintTop_toTopOf="@+id/ivHeroInv07"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ivHeroInv03"
+        android:layout_alignStart="@+id/ivHeroInv03"
+        android:layout_below="@+id/ivHeroInv03"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivHeroInv08"
+        app:layout_constraintTop_toTopOf="@+id/ivHeroInv08"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <ImageView
+        android:id="@+id/ivHeroInv08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivHeroInv04"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/ivHeroInv03"
+        android:layout_toRightOf="@+id/ivHeroInv03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivHeroInv04"
+        app:srcCompat="@mipmap/inv_empty_slot" />
+
+    <RelativeLayout
+        android:id="@+id/rlHeroLayout"
+        android:layout_width="215dp"
+        android:layout_height="207dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/rlInvNavigateBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivInvHero"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/hero"
+            tools:layout_editor_absoluteX="27dp"
+            tools:layout_editor_absoluteY="32dp" />
+
+        <ImageView
+            android:id="@+id/ivInvWeapon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/hero_empty" />
+
+        <ImageView
+            android:id="@+id/ivInvArmor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/hero_empty" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlInvNavigateBtn"
+        android:layout_width="505dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        >
+
+        <Button
+            android:id="@+id/btnMainTrader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Shop"
+            tools:layout_editor_absoluteX="259dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/btnInventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Inventory"
+            tools:layout_editor_absoluteX="416dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+        <Button
+            android:id="@+id/btnMainWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="Main Window"
+            tools:layout_editor_absoluteX="27dp"
+            tools:layout_editor_absoluteY="240dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlItemChars"
+        android:layout_width="233dp"
+        android:layout_height="217dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnHide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tvItemChars"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/tvItemChars"
+            android:layout_toRightOf="@+id/tvItemChars"
+            android:background="@android:drawable/btn_dialog"
+            tools:layout_editor_absoluteX="125dp"
+            tools:layout_editor_absoluteY="70dp" />
+
+        <TextView
+            android:id="@+id/tvItemChars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="24dp"
+            android:text="item charactaristics" />
+
+        <Button
+            android:id="@+id/btnWearUse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:text="wear/use" />
+
+        <Button
+            android:id="@+id/btnDrop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnWearUse"
+            android:layout_alignBottom="@+id/btnWearUse"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Drop" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="110dp"
+        android:layout_height="69dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnRemoveWpn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="remove weapon"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btnRemoveArmr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="remove armor"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
